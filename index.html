@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Ürün Satışı</title>
+    <style>
+        /* Arka Plan ve Genel Tasarım */
+        body {
+            background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* İçerik Kutusu */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+            background: #222; /* Koyu gri */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Başlık */
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffcc00; /* Altın sarısı */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.5);
+        }
+
+        /* Ürün Kartı */
+        .product {
+            background: #2c2c2c; /* Mat koyu gri */
+            border: 2px solid #444; /* Kenarlık */
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Ürün Kartı Hover Efekti */
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            border-color: #ffcc00;
+        }
+
+        /* Ürün Resmi */
+        .product img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Ürün İsmi */
+        .product h2 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        /* Fiyat */
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        /* Satın Al Butonu */
+        .buy-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(to right, #ff0000, #990000);
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Satın Al Butonu Hover */
+        .buy-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(255, 0, 51, 0.8);
+            background: #ff3300;
+            border-color: #ff3300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ AccountHub</h1>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="E Devlet">
+            <h2>E Devlet</h2>
+            <p class="price">Fiyat: 30₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Netflix">
+            <h2>Netflix</h2>
+            <p class="price">Fiyat: 70₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Instagram">
+            <h2>Instagram</h2>
+            <p class="price">Fiyat: 50₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="İstek Site Combo">
+            <h2>İstek Site Combo</h2>
+            <p class="price">Fiyat: 30₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Tiktok">
+            <h2>Tiktok (1K)</h2>
+            <p class="price">Fiyat: 150₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Duolingo">
+            <h2>Duolingo</h2>
+            <p class="price">Fiyat: 30₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Brawl Stars">
+            <h2>Brawl Stars</h2>
+            <p class="price">Fiyat: 50₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Bilyoner">
+            <h2>Bilyoner</h2>
+            <p class="price">Fiyat: 45₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Exxen">
+            <h2>Exxen</h2>
+            <p class="price">Fiyat: 20₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="Capcut Pro">
+            <h2>Capcut Pro</h2>
+            <p class="price">Fiyat: 45₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+
+        <div class="product">
+            <img src="https://i.hizliresim.com/5zegg0s.gif" alt="İstek Site Checker">
+            <h2>İstek Site Checker</h2>
+            <p class="price">Fiyat: 25₺</p>
+            <a href="odeme.html" class="buy-button">Satın Al</a>
+        </div>
+    </div>
+</body>
+</html>
