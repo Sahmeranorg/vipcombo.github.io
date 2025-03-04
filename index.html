@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEKİLİS SORUSU | SAHMARAN</title>
+    <style>
+        /* Stil kodları yukarıdakiyle aynı */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .shiny-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px white;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px white; }
+            to { text-shadow: 0 0 20px red, 0 0 30px white, 0 0 50px red; }
+        }
+
+        .table-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid red;
+            background-color: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 2px solid red;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: darkred;
+            color: white;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.3);
+            margin-right: 8px;
+        }
+
+        .submit-button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px red;
+        }
+
+        .submit-button:hover {
+            background-color: darkred;
+            box-shadow: 0 0 20px yellow;
+        }
+
+        .image-container {
+            margin-bottom: 20px;
+        }
+
+        .question-image {
+            width: 100px; /* Resmin boyutunu ayarlayabilirsiniz */
+            height: auto;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="shiny-text">Hangi İslam alimi, "İmamet" anlayışını ve Alevilik inançlarını derinlemesine işlemiş ve "El-Câmi' li'l-İlm" adlı eserini yazmıştır?</h1>
+            
+    <table>
+        <tr>
+            <th>Seçenekler</th>
+        </tr>
+        <tr><td><label><input type="radio" name="language" value="İbn Arabi"> İbn Arabi</label></td></tr>
+        <tr><td><label><input type="radio" name="language" value="Maturidi"> Maturidi</label></td></tr>
+        <tr><td><label><input type="radio" name="language" value="İmam Caferi Sadık"> İmam Caferi Sadık</label></td></tr>
+        <tr><td><label><input type="radio" name="language" value="Allame Helli"> Allame Helli</label></td></tr>
+    </table>
+    
+    <div class="table-container">
+        <form id="surveyForm">
+            <!-- Kullanıcı adı girişi ekleyin -->
+            <input type="text" id="userName" placeholder="İnsta Nickini Yaz..." required style="padding: 10px; margin: 10px; width: 80%;">
+            <button type="submit" class="submit-button">Gönder</button>
+        </form>
+    <br>
+<div class="image-container">
+        <!-- Sorunun üstüne küçük bir resim ekledik -->
+        <img src="https://i.hizliresim.com/pnlui3r.jpg?_gl=1*nye0gm*_ga*NTQ3NjQ4Njg0LjE3Mzg1MjA1MTA.*_ga_M9ZRXYS2YN*MTc0MTA0NTI1Ny4xOS4xLjE3NDEwNDUyOTUuMjIuMC4w" alt="Soru Resmi" class="question-image">
+    </div>
+    <marquee>KAZANAN KİŞİ BU HESABIM SAHİBİ OLACAKTIR | @BOOTACHERBERNAL</marquee>
+</div>
+
+    <p id="result" style="color: lime; font-weight: bold;"></p>
+
+    <script>
+        document.getElementById("surveyForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let selectedOption = document.querySelector('input[name="language"]:checked');
+            let userName = document.getElementById("userName").value.trim();
+            
+            if (!selectedOption || !userName) {
+                alert("Lütfen bir seçenek ve adınızı girin!");
+                return;
+            }
+
+            let selectedValue = selectedOption.value;
+
+            // Kullanıcı seçimi yaptıktan sonra seçenekleri kilitle
+            document.querySelectorAll('input[name="language"]').forEach(el => el.disabled = true);
+            
+            // Telegram API'yi kullanarak cevap gönderme
+            const botToken = "7735106821:AAEPFD-f_d9wafuO619UCpSkB8x0dotqP00"; // Telegram Bot Token'ınızı buraya yazın
+            const chatID = "7094987776"; // Telegram chat ID'nizi buraya yazın
+            const message = `📧 Yeni bir cevap alındı!\n\n⭐ Adı: ${userName}\n\n✨ Cevap: ${selectedValue}`;
+
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatID}&text=${encodeURIComponent(message)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        document.getElementById("result").innerText = "Cevabınız gönderildi!";
+                    } else {
+                        document.getElementById("result").innerText = "Mesaj gönderilemedi.";
+                    }
+                })
+                .catch(error => {
+                    console.error("Hata:", error);
+                    document.getElementById("result").innerText = "Mesaj gönderilemedi.";
+                });
+        });
+    </script>
+
+</body>
+</html>
